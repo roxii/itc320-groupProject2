@@ -22,7 +22,13 @@ body {
 	width: 12.5%;
 }
 
-.chessBoard #column1 {
+.chessBoard .input {
+	position: relative;
+	top: 101%;
+	color: #FFFFFF;
+}
+
+#column1 {
 	position: absolute;
 	top: 0%;
 	left: 0%;
