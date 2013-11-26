@@ -7,11 +7,84 @@ body {
 	color: #000;
 }
 
+.chessBoard {
+	height: 500px;
+	width: 500px;
+}
+
+#column1 {
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	height: 12.5%;
+	width: 12.5%;
+}
+
+#column2 {
+	position: absolute;
+	top: 0%;
+	left: 12.5%;
+	height: 12.5%;
+	width: 12.5%;
+}
+
+#column3 {
+	position: absolute;
+	top: 0%;
+	left: 25%;
+	height: 12.5%;
+	width: 12.5%;
+}
+
+#column4 {
+	position: absolute;
+	top: 0%;
+	left: 37.5%;
+}
+
+#column5 {
+	position: absolute;
+	top: 0%;
+	left: 50%;
+}
+
+#column6 {
+	position: absolute;
+	top: 0%;
+	left: 62.5%;
+}
+
+#column7 {
+	position: absolute;
+	top: 0%;
+	left: 75%;
+}
+
+#column8 {
+	position: absolute;
+	top: 0%;
+	left: 87.5%;
+}
+
+.dark {
+	background-color: #858585;
+	width: 100%;
+	height: 100%;
+}
+
+.light {
+	background-color: #FFFFFF;
+	width: 100%;
+	height: 100%;
+}
+
+
 /* ~~ Element/tag selectors ~~ */
 ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
 	padding: 0;
 	margin: 0;
 }
+
 h1, h2, h3, h4, h5, h6, p {
 	margin-top: 0;
 	margin-bottom: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
