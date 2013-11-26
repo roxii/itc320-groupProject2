@@ -8,32 +8,36 @@ body {
 }
 
 .chessBoard {
-	height: 500px;
-	width: 500px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 700px;
+	width: 700px;
+	margin-left: -350px;
+	margin-top: -350px;
 }
 
-#column1 {
+.chessBoard .column {
+	height: 12.5%;
+	width: 12.5%;
+}
+
+.chessBoard #column1 {
 	position: absolute;
 	top: 0%;
 	left: 0%;
-	height: 12.5%;
-	width: 12.5%;
 }
 
 #column2 {
 	position: absolute;
 	top: 0%;
 	left: 12.5%;
-	height: 12.5%;
-	width: 12.5%;
 }
 
 #column3 {
 	position: absolute;
 	top: 0%;
 	left: 25%;
-	height: 12.5%;
-	width: 12.5%;
 }
 
 #column4 {
