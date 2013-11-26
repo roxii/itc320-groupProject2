@@ -88,7 +88,95 @@ body {
 	height: 100%;
 }
 
+.pieces {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 700px;
+	width: 700px;
+	margin-left: -350px;
+	margin-top: -350px;
+}
 
+.a {
+	position: absolute;
+	left: 0%;
+}
+
+.b {
+	position: absolute;
+	left: 12.5%;
+}
+
+.c {
+	position: absolute;
+	left: 25%;
+}
+
+.d {
+	position: absolute;
+	left: 37.5%;
+}
+
+.e {
+	position: absolute;
+	left: 50%;
+}
+
+.f {
+	position: absolute;
+	left: 62.5%;
+}
+
+.g {
+	position: absolute;
+	left: 75%;
+}
+
+.h {
+	position: absolute;
+	left: 87.5%;
+}
+
+.one{
+	position: absolute;
+	top: 100%;
+}
+
+.two {
+	position: absolute;
+	top: 25%;
+}
+
+.three {
+	position: absolute;
+	top: 37.5%;
+}
+
+.four {
+	position: absolute;
+	top: 50%;
+}
+
+.five {
+	position: absolute;
+	top: 62.5%;
+}
+
+.six {
+	position: absolute;
+	top: 75%;
+}
+
+.seven{
+	position: relative;
+	top: 12%;
+}
+
+.eight {
+	position: relative;
+	top: 100%;
+}
 /* ~~ Element/tag selectors ~~ */
 ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
 	padding: 0;
