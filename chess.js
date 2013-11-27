@@ -35,6 +35,15 @@ window.onload = function() {
 function makeMove(){
 	var from = $("from").value;
 	var to = $("to").value;
+	if (isValidMove(x1, y1, x2, y2)) {
+		game1[x2][y2] = game1[x1][y1];
+		game1[x1][y1] = ' ';
+		if (playerTurn == white) {
+			playerTurn = black;
+		}
+		else {
+			playerTurn = white;
+		}
 }
 
 
@@ -182,63 +191,201 @@ var $ = function(id){
 
 
 
-//function isValidMove(x1, y1, x2, y2) {
-	//var movingFrom = game1[x1][y1];
-	//var movingTo = game1[x2][y2];
+function isValidMove(x1, y1, x2, y2) {
+	var movingFrom = game1[x1][y1];
+	var movingTo = game1[x2][y2];
+
 	
-	//if(movingFrom == ' '){ //trying to move an empty square
-		//return false;
-	//}
-	//if(movingTo != ' ') { //square already occupied
-		//return false;
-	//}
-	//if((movingFrom == 'R' || movingFrom == 'r') && (x1 != x2 && y1 != y2)) {
-	////rook can move up, down, left, and right
-		//return false;
-	//}
-	//else if((movingFrom == 'N' || movingFrom == 'n') && ((x1 != x2 && (Math.abs(y2-y1)!= 1)) && ((Math.abs(x2-x1)!= 1) && y1 != y2))) {
-	////knight moves in L shape
-		//return false;
-	//}
-	//else if((movingFrom == 'B' || movingFrom == 'b') && ((x2-x1) != (y2-y1))) {
-	////bishop moves in diagonal
-		//return false;
-	//}
-	//else if((movingFrom == 'Q' || movingFrom == 'q') && (x1 != x2 && y1 != y2) && ((x2-x1) != (y2-y1))) {
-	////queen moves up, down, left, right, and diagonal
-		//return false;
-	//}
-	//else if((movingFrom == 'K' || movingFrom == 'k') && (x1 != x2 && y1 != y2) && ((x2-x1) != (y2-y1)) && ((Math.abs(x2-x1) != 1) && (Math.abs(y2-y1) != 1))) {
-	////king moves 1 square in any direction
-		//return false;
-	//}
-	//else if((movingFrom == 'P') && (((x2-x1) != 0) && ((y2-y1) != 1))) {
-	////black pawn can only move down 1 square
-		//return false;
-	//}
-	//else if((movingFrom == 'p') && (((x2-x1) != 0) && ((y1-y2) != 1))) {
-	////white pawn can only move up 1 square 
-		//return false;
-	//}
-	//else {
-		//return true;
-	//}
-//}
-
-//function makeMove(x1, y1, x2, y2) {
-	//if (isValidMove(x1, y1, x2, y2)) {
-		//game1[x2][y2] = game1[x1][y1];
-		//game1[x1][y1] = ' ';
-		//if (playerTurn == white) {
-			//playerTurn = black;
-		//}
-		//else {
-			//playerTurn = white;
-		//}
-	//else {
-		//// return error message in a span?
-	//}
-//}
-
+	if(movingFrom == ' '){ //trying to move an empty square
+		return false;
+	}
+	if(movingTo != ' ') { //square already occupied
+		return false;
+	}
+	
+	//rook can move up, down, left, and right
+	if((movingFrom == 'R' || movingFrom == 'r') {
+		if (x1 != x2) {
+			if (y1 == y2) {
+				for (i=x1;i<(x2+1);i++) {
+					var openSpace = game1[i][y1];
+					if (openSpace != ' ') {
+						return false;
+					}
+				}
+			}
+		}
+		if (y1 != y2) {
+			if (x1 == x2) {
+				for (i=y1;i<(y2+1);i++) {
+					var openSpace = game1[x1][i];
+					if (openSpace != ' ') {
+						return false;
+					}
+				}
+			}
+		}
+		else {
+			return false;
+		}
+	}
+	else if((movingFrom == 'N' || movingFrom == 'n') && ((x1 != x2 && (Math.abs(y2-y1)!= 1)) && ((Math.abs(x2-x1)!= 1) && y1 != y2))) {
+	//knight moves in L shape
+		return false;
+	}
+	//bishop moves in diagonal
+	else if((movingFrom == 'B' || movingFrom == 'b') {//&& ((x2-x1) != (y2-y1))) {
+		if ((x2-x1) == (y2-y1)) {
+			if (x2>x1) {
+				var i = x1;
+				var j = x2;
+			}
+			if (y2>y1) {
+				var k = y1;
+				var l = y2'
+			}
+			if (x1>x2) {
+				var i = x2;
+				var j = x1;
+			}
+			if (y1>y1) {
+				var k = y2;
+				var l = y1'
+			
+			while (i<(j+1)) {
+				if (k<(l+1)) {
+					var openSpace = game1[i][k];
+					if (openSpace != ' ') {
+						return false;
+					}
+					k++;
+				}
+				i++;
+			}
+		}
+		else {
+			return false;
+		}
+	}
+	else if((movingFrom == 'Q' || movingFrom == 'q') {//&& (x1 != x2 && y1 != y2) && ((x2-x1) != (y2-y1))) {
+	//queen moves up, down, left, right, and diagonal
+		if ((x2-x1) == (y2-y1)) {
+			if (x2>x1) {
+				var i = x1;
+				var j = x2;
+			}
+			if (y2>y1) {
+				var k = y1;
+				var l = y2'
+			}
+			if (x1>x2) {
+				var i = x2;
+				var j = x1;
+			}
+			if (y1>y1) {
+				var k = y2;
+				var l = y1'
+			
+			while (i<(j+1)) {
+				if (k<(l+1)) {
+					var openSpace = game1[i][k];
+					if (openSpace != ' ') {
+						return false;
+					}
+					k++;
+				}
+				i++;
+			}
+		}
+		if (x1 != x2) {
+			if (y1 == y2) {
+				for (i=x1;i<(x2+1);i++) {
+					var openSpace = game1[i][y1];
+					if (openSpace != ' ') {
+						return false;
+					}
+				}
+			}
+		}
+		if (y1 != y2) {
+			if (x1 == x2) {
+				for (i=y1;i<(y2+1);i++) {
+					var openSpace = game1[x1][i];
+					if (openSpace != ' ') {
+						return false;
+					}
+				}
+			}
+		}
+		else {
+			return false;
+		}
+	}
+	else if((movingFrom == 'K' || movingFrom == 'k') && (x1 == x2 || y1 == y2) || ((x2-x1) == (y2-y1)) || ((Math.abs(x2-x1) == 1) || (Math.abs(y2-y1) == 1))) {
+	//king moves 1 square in any direction
+		if (x1 != x2) {
+			if (y1 == y2) {
+				for (i=x1;i<(x2+1);i++) {
+					var openSpace = game1[i][y1];
+					if (openSpace != ' ') {
+						return false;
+					}
+				}
+			}
+		}
+		if (y1 != y2) {
+			if (x1 == x2) {
+				for (i=y1;i<(y2+1);i++) {
+					var openSpace = game1[x1][i];
+					if (openSpace != ' ') {
+						return false;
+					}
+				}
+			}
+		}
+		if ((x2-x1) == (y2-y1)) {
+			if (x2>x1) {
+				var i = x1;
+				var j = x2;
+			}
+			if (y2>y1) {
+				var k = y1;
+				var l = y2'
+			}
+			if (x1>x2) {
+				var i = x2;
+				var j = x1;
+			}
+			if (y1>y1) {
+				var k = y2;
+				var l = y1'
+			
+			while (i<(j+1)) {
+				if (k<(l+1)) {
+					var openSpace = game1[i][k];
+					if (openSpace != ' ') {
+						return false;
+					}
+					k++;
+				}
+				i++;
+			}
+		}
+		else {
+			return false;
+		}
+	}
+	else if((movingFrom == 'P') && (((x2-x1) != 0) && ((y2-y1) != 1))) {
+	//black pawn can only move down 1 square
+		return false;
+	}
+	else if((movingFrom == 'p') && (((x2-x1) != 0) && ((y1-y2) != 1))) {
+	//white pawn can only move up 1 square 
+		return false;
+	}
+	else {
+		return true;
+	}
+}
    
    
