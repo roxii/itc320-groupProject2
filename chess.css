@@ -11,10 +11,10 @@ body {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	height: 700px;
-	width: 700px;
-	margin-left: -25%;
-	margin-top: -25%;
+	height: 500px;
+	width: 500px;
+	margin-left: -250px;
+	margin-top: -250px;
 }
 
 .chessBoard .column {
@@ -24,7 +24,20 @@ body {
 
 .chessBoard .input {
 	position: relative;
-	top: 101%;
+	top: 107%;
+	color: #FFFFFF;
+}
+
+.letter {
+	top: 0;
+	left: 0;
+	margin: auto;
+	color: #FFFFFF;
+	
+}
+
+.numbers {
+	display: inline;	
 	color: #FFFFFF;
 }
 
@@ -120,7 +133,7 @@ body {
 
 .a {
 	position: absolute;
-	left: 0%;
+	left: 11px;
 }
 
 .b {
@@ -129,73 +142,74 @@ body {
 }
 
 .c {
-	position: absolute;
+	position: relative;
 	left: 25%;
 }
 
 .d {
-	position: absolute;
+	position: relative;
 	left: 37.5%;
 }
 
 .e {
-	position: absolute;
+	position: relative;
 	left: 50%;
 }
 
 .f {
-	position: absolute;
+	position: relative;
 	left: 62.5%;
 }
 
 .g {
-	position: absolute;
+	position: relative;
 	left: 75%;
 }
 
 .h {
-	position: absolute;
+	position: relative;
 	left: 87.5%;
 }
 
 .one{
 	position: absolute;
-	top: 100%;
+	top: 630px;
+	
 }
 
 .two {
 	position: absolute;
-	top: 25%;
+	top: 540px;
 }
 
 .three {
 	position: absolute;
-	top: 37.5%;
+	top: 450px;
 }
 
 .four {
 	position: absolute;
-	top: 50%;
+	top: 360px;
 }
 
 .five {
 	position: absolute;
-	top: 62.5%;
+	top: 270px;
 }
 
 .six {
 	position: absolute;
-	top: 75%;
+	top: 190px;
 }
 
 .seven{
-	position: relative;
-	top: 12%;
+	position: absolute;
+	top: 95px;
 }
 
 .eight {
-	position: relative;
-	top: 100%;
+	position: absolute;
+	top: 0px;
 }
 /* ~~ Element/tag selectors ~~ */
 ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
